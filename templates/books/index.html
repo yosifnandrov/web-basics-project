@@ -1,0 +1,23 @@
+{% extends 'books/base_books.html' %}
+{% load static %}
+{% block title %} Books {% endblock %}
+{% block styles %} <link rel="stylesheet" href="{% static 'css/books/main.css' %}"> {% endblock %}
+{% block content %}
+    <form method="get" action="{% url 'create book'%}">
+    {% csrf_token %}
+    <button class="new-book-button">Create new Book</button>
+    </form>
+    <h1>All Books</h1>
+    {%  for book in books %}
+        <ul class="list-books">
+        <li>
+            <h2 class="book-title">{{ book.book_title }}</h2>
+            <p class="book-author">{{ book.book_author }}</p>
+            <p class="book-description">{{ book.book_description }}</p>
+            <p class="book-pages">{{ book.book_pages }} pages</p>
+            <a class="edit-button" href="{% url 'edit book' book.id %}">Edit</a>
+            <a class="edit-button" href="{% url 'delete book' book.id %}">Delete</a>
+        </li>
+        </ul>
+    {% endfor %}
+{% endblock %}

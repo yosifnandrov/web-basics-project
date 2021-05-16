@@ -1,0 +1,58 @@
+ul, li , p , h1 {
+    margin: 0;
+    padding: 0;
+}
+
+.book-author, .book-pages {
+    padding:10px;
+    font-family: "Fira Code Medium";
+    font-size: 1.1em;
+    color: dimgray;
+}
+
+.book-title {
+    font-size: 1.6em;
+    font: bolder;
+    padding: 30px 0 0 10px;
+}
+
+
+.book-description {
+    padding: 0 10px;
+    font-weight: lighter;
+}
+.edit-button {
+    border-radius: 5px;
+    background-color: #00abff;
+    border: 1px solid #191a17;
+    color: #1c1a1a;
+    font-weight: 600;
+    width: 45%;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+
+}
+
+.edit-button:hover {
+    background-color: darkcyan;
+}
+
+
+.new-book-button {
+    border-radius: 5px;
+    background-color: green;
+    color: white;
+    margin-top: 20px;
+    margin-bottom: 10px;
+
+}
+
+.list-books {
+    display: inline-block;
+    border: solid rgba(0,0,0,0.1);
+}
+
+li {
+    list-style-type: none;
+}

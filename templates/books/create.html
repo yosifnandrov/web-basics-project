@@ -1,0 +1,38 @@
+{% extends 'books/base_books.html' %}
+{% load static %}
+{% block title %} Create book {% endblock %}
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'css/books/main.css' %}" xmlns="http://www.w3.org/1999/html"> {% endblock %}
+{% block content %}
+    <form method="post" action="">
+        {% csrf_token %}
+        {{ form.book_title.label_tag }}
+                    <input type="text"
+                           name="{{ form.book_title.html_name }}"
+                           id="{{ form.book_title.id_for_label }}"
+                           value="{{ form.book_title.value|default_if_none:"" }}"/>
+        {{ form.book_title.errors }}
+        {{ form.book_pages.label_tag }}
+                    <input type="number"
+                            name="{{ form.book_pages.html_name }}"
+                            id="{{ form.book_pages.id_for_label }}"
+                            value="{{ form.book_pages.value|default_if_none:"" }}"/>
+        {{ form.book_pages.errors }}
+        {{ form.book_author.label_tag }}
+                       <input type="text"
+                            name="{{ form.book_author.html_name }}"
+                            id="{{ form.book_author.id_for_label }}"
+                            value="{{ form.book_author.value|default_if_none:"" }}">
+        {{ form.book_author.errors }}
+        {{ form.book_description.label_tag }}
+                        <textarea
+                              name="{{ form.book_description.html_name }}"
+                              id="{{ form.book_description.id_for_label }}"
+                              aria-describedby="descHelp">{{ form.description.value|default_if_none:"" }}</textarea>
+        {{ form.book_description.errors }}
+    <input type="submit" value="Submit">
+    </form>
+
+
+
+{% endblock %}
